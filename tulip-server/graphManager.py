@@ -16,14 +16,19 @@ libtulip_dir = "/work/tulip-dev/tulip_3_6_maint-build/release/install/lib"
 sys.path.append(libtulip_dir)
 libtulip_dir = "/work/svn/renoust/workspace/tulip_3_6_maint-build/release/install/lib"
 sys.path.append(libtulip_dir)
+libtulip_dir = "/home/cbescos/work/Tulip-3.8.0/lib/python"
+sys.path.append(libtulip_dir)
+libtulip_dir = "/home/cbescos/work/TulipPosy/tulip-server"
+sys.path.append(libtulip_dir)
 
 from tulip import *
 
 # path to custom scripts that perform the analysis
-lgtPython_dir = "/home/brenoust/Dropbox/OTMedia/lighterPython/entanglement" 
-sys.path.append(lgtPython_dir)
-import entanglementAnalysisLgt
-import entanglementSynchronization
+#lgtPython_dir = "/home/brenoust/Dropbox/OTMedia/lighterPython/entanglement" 
+#sys.path.append(lgtPython_dir)
+
+#import entanglementAnalysisLgt
+#import entanglementSynchronization
 
 '''
 This class stores the graphs, and performs the manipulations on it.
@@ -289,7 +294,7 @@ class graphManager():
     return an array containing [the catalyst graph, entanglement intensity, entanglement homogeneity]
     '''        
     def analyseGraph(self, jsonGraph = 0, weightProperty = ""):
-
+        return
         graph = self.substrate
         entanglementIntensity = 0
         entanglementHomogeneity = 0
@@ -330,6 +335,7 @@ class graphManager():
         labelList = []
 
         if not onlyOneNode:                                        
+            
             c = entanglementAnalysisLgt.EntanglementAnalysis(graph, "descripteurs", _weightProperty = weightProperty)
 
             if c.catalystGraph.numberOfNodes() > 0:
@@ -469,7 +475,7 @@ class graphManager():
     In the future we should include the entanglement calculation and send it back too.
     '''
     def synchronizeFromCatalyst(self, jsonGraph, operator):
-
+        return
         nodeList = []
         graphNList = []
         cataList = []

@@ -5,6 +5,8 @@ import threading
 import sys
 libtulip_dir = "/work/github/TulipPosy/tulip-server"
 sys.path.append(libtulip_dir)
+libtulip_dir = "/home/cbescos/work/TulipPosy/tulip-server"
+sys.path.append(libtulip_dir)
 from graphManager import *
         
 

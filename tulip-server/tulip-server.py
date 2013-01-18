@@ -22,7 +22,10 @@ libtulip_dir = "/work/svn/renoust/workspace/tulip_3_6_maint-build/release/instal
 sys.path.append(libtulip_dir)
 libtulip_dir = "/work/github/TulipPosy/tulip-server"
 sys.path.append(libtulip_dir)
-
+libtulip_dir = "/home/cbescos/work/Tulip-3.8.0/lib/python"
+sys.path.append(libtulip_dir)
+libtulip_dir = "/home/cbescos/work/TulipPosy/tulip-server"
+sys.path.append(libtulip_dir)
 from tulip import *
 
 # custom python scripts for graph and query analysis, might be released soon
@@ -31,7 +34,7 @@ sys.path.append(lgtPython_dir)
 lgtPython_dir = "/home/brenoust/Dropbox/MultiClientDev/tulip-server" 
 sys.path.append(lgtPython_dir)
 
-import searchQuery
+#import searchQuery
 
 from graphManager import *
 from session import *
@@ -248,6 +251,7 @@ class MyRequestHandler(tornado.web.RequestHandler):
     '''
     def creationRequest(self, request):
         # handles a search request, gathers the result and formats the graph in order to send to d3
+        '''
         if 'search' in request.keys():
                 #print 'search is in request: ',request
                 query = request['search'][0]
@@ -270,6 +274,7 @@ class MyRequestHandler(tornado.web.RequestHandler):
 
                 graphJSON = self.utilGraphMan.graphToJSON(g,{'nodes':[{'type':'string', 'name':'label'}, {'type':'float', 'name':'id'}], 'edges':[{'type':'float', 'name':'id'}, {'type':'string', 'name':'descripteurs'}]})
                 self.sendJSON(graphJSON)
+        '''
 
         # creates in tulip a graph sent by d3 (and randomizes its layout just for the show), sends it back
         if 'graph' in request.keys():
